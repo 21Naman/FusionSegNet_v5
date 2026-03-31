@@ -11,7 +11,7 @@
 ## Step 1 — Download the Dataset
 
 1. Register at [nuscenes.org](https://www.nuscenes.org/nuscenes)
-2. Download `v1.0-mini.tgz` (approximately 4.2 GB)
+2. Download `v1.0-mini.tgz` (approximately 3.9 GB)
 3. Upload it to the root of your Google Drive (not inside any folder)
 
 ---
@@ -26,11 +26,11 @@
 
 ## Step 3 — Run the Notebook
 
-Run cells in order from top to bottom:
+Run cells in order from top to bottom(NNOTE: Restart the runtime(from run all drop down menu) after running the first cell(installing dependencies/libraries). run cell 1 -> restart session(in run all menu) -> run entire code again:
 
 | Cells | What happens |
 |---|---|
-| 1 (Install deps) | Installs all Python packages |
+| 1 (Install deps) | Installs all Python packages then RESTART THE RUNTIME(from run all dropdown menue) IN GOOGLE COLAB |
 | 2 (Mount Drive) | Mounts your Google Drive |
 | 3 (Setup Paths) | Extracts the nuScenes dataset, creates output directories |
 | 4 (FusionSegmenter) | Defines the multi-sensor pseudo-label generator |
@@ -57,7 +57,7 @@ Run cells in order from top to bottom:
 ## Expected Training Time
 
 - nuScenes mini, all 6 cameras, 45 epochs
-- ~2–4 hours on a T4 GPU depending on Colab availability
+- ~2–3 hours on a T4 GPU depending on Colab availability
 
 ---
 
@@ -74,16 +74,3 @@ After training, the following are saved to Google Drive or `/content/outputs/`:
 | `outputs/visualizations/` | Qualitative overlay images |
 
 ---
-
-## Local Setup (Optional)
-
-If you prefer to run locally instead of Colab:
-
-```bash
-git clone https://github.com/YOUR_USERNAME/FusionSegNet.git
-cd FusionSegNet
-pip install -r requirements.txt
-jupyter notebook FusionSegNet_v5.ipynb
-```
-
-Note: you will need to adjust the file paths at the top of the path setup cell (remove the Google Drive paths and point to your local dataset location).
